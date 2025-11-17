@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-
 namespace Payroll2.Logic;
 
 public class PayrollService
 {
     private readonly int _payday;
     private readonly ITaxPolicy _taxPolicy;
+    private readonly int maxMissedDays;
 
     public PayrollService(ITaxPolicy taxPolicy, int payday = 7)
     {
         _taxPolicy = taxPolicy;
         _payday = payday;
+        maxMissedDays = 28;
 
         // Subscribe to TimeManager events
         TimeManager.OnDateChanged += OnDateChange;
@@ -24,9 +25,19 @@ public class PayrollService
         
         foreach (var e in employees)
         {
-            e.WorkedOneDay();
-            Console.WriteLine($"[DEBUG] {e.Id} WorkedDays: {e.WorkedDays}");
+            if (EmployeeBehaviour.MissedADay() && e.MissedDays < 28) //put the max to 28
+            {
+                e.MissedDays++;
+            }
+            else
+            {
+                e.WorkedOneDay();
+                e.WorkedExtraHours += EmployeeBehaviour.WorkedExtraChance();
+            }
 
+            
+            e.WorkedExtraPay = e.WorkedExtraHours * e.Salary * 1.5;
+            
             // Pay on payday
             if (date.Day == _payday)
             {
@@ -44,7 +55,15 @@ public class PayrollService
         Console.WriteLine($"[DEBUG] Saving on {date:yyyy-MM-dd}");
         EmployeeManager.SaveEmployees();
 
-        // Reset WorkedDays ONLY on payday, AFTER saving
+        if (date.Day == 1 && date.Month == 1)
+        {
+            foreach (var e in EmployeeManager.Employees)
+            {
+                e.MissedDays = 0;
+            }
+        }
+
+        
         if (date.Day == _payday)
         {
             foreach (var e in employees)
@@ -53,6 +72,7 @@ public class PayrollService
                 if (e.Paid[monthIndex])
                 {
                     e.WorkedDays = 0;
+                    e.WorkedExtraHours = 0;
                     Console.WriteLine($"[DEBUG] {e.Id} reset to 0 after payday");
                 }
             }

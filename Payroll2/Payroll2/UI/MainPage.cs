@@ -37,7 +37,8 @@ public partial class MainPage : Form
 
     private void manage_Click(object sender, EventArgs e)
     {
-        throw new System.NotImplementedException();
+        //ShowPage(new ManageEmployee());
+        throw new  NotImplementedException();
     }
 
     private void timer_Click(object sender, EventArgs e)
@@ -48,7 +49,7 @@ public partial class MainPage : Form
 
     private void stats_Click(object sender, EventArgs e)
     {
-        throw new System.NotImplementedException();
+        ShowPage(new Stats());
     }
 
     private void exit_Click(object sender, EventArgs e)

@@ -41,4 +41,9 @@ public static class TimeManager
     {
         if (IsRunning) Stop(); else Start();
     }
+
+    public static bool IsWeekend()
+    {
+        return MockDate.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday;
+    }
 }

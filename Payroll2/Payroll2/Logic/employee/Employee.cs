@@ -16,9 +16,14 @@ public class Employee
     
     public int ExpectedSalary { get; set; }
     
+    public int WorkedExtraHours { get; set; }
+    
+    public double WorkedExtraPay { get; set; }
+    
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public contractTypeEnum ContractType { get; set; }
-    
+
+    public int MissedDays { get; set; }
     public int WorkedDays { get; set; }
     public double SalariesTotalBrut { get; set; }
     public double SalariesTotalNet { get; set; }
@@ -29,23 +34,29 @@ public class Employee
 
     public Employee(int salary, workHoursEnum workHours, contractTypeEnum contractType)
     {
-        Id = $"EMP{++_idCounter:D6}";
-        Salary = salary;
-        ExpectedSalary = 20 * (int)workHours * salary;
-        WorkHours = workHours;
-        ContractType = contractType;
-        WorkedDays = 0;
-        SalariesTotalBrut = 0;
-        SalariesTotalNet = 0;
+        Id = $"EMP{++_idCounter:D6}";//
+        ContractType = contractType;// extern/intern
+        Salary = salary;// per hour
+        WorkHours = workHours;//4hr/6hr/fulltime
+        ExpectedSalary = 20 * (int)workHours * salary; // expected based only on salary
+        WorkedDays = 0; //
+        WorkedExtraHours = 0;//
+        WorkedExtraPay = 0;// the amount he gets for extra work
+        MissedDays = 0;// max to 28, resets every year
+        SalariesTotalBrut = 0;// total with extra hours
+        SalariesTotalNet = 0; //after tax
         HiringDate = TimeManager.MockDate;
         Paid = new List<bool>(new bool[12]);
     }
 
-    public void WorkedOneDay() => WorkedDays++;
+    public void WorkedOneDay()
+    {
+        if(!TimeManager.IsWeekend()) WorkedDays++;
+    }
 
     public void Pay(ITaxPolicy taxPolicy)
     {
-        double gross = WorkedDays * (int)WorkHours * Salary; 
+        double gross = (WorkedDays * (int)WorkHours * Salary) + (WorkedExtraHours * Salary * 1.5); 
         SalariesTotalBrut += gross;
         SalariesTotalNet += taxPolicy.CalculateNet(gross);
     }

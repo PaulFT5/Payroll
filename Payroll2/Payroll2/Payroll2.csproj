@@ -15,6 +15,12 @@
       <Compile Update="UI\AddEmployee.cs">
         <SubType>UserControl</SubType>
       </Compile>
+      <Compile Update="UI\Stats.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
+      <Compile Update="UI\ManageEmp.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
     </ItemGroup>
 
 </Project>
