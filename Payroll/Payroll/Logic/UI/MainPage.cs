@@ -5,7 +5,8 @@ namespace Payroll.UI;
 
 public partial class MainPage : Form
 {
-    private PayrollService _payrollService; // Add this field
+    private PayrollService _payrollService;
+    private Company _company;
 
     public MainPage()
     {
@@ -16,9 +17,9 @@ public partial class MainPage : Form
         TimeManager.OnDateChanged += UpdateDateLabel;
         EmployeeManager.LoadEmployees(); // Load employees from JSON
         Employee.SetCounterFromExisting(EmployeeManager.Employees); // Sync ID counter
-        
-        // CREATE PAYROLL SERVICE - THIS WAS MISSING!
-        _payrollService = new PayrollService(new TaxPolicy(), payday: 7);
+
+        _company = new Company(15000);
+        _payrollService = new PayrollService(new TaxPolicy(), _company ,payday: 7);
     }
     
     private void UpdateDateLabel(DateTime newDate)

@@ -61,6 +61,11 @@ public class Employee
         SalariesTotalNet += taxPolicy.CalculateNet(gross);
     }
 
+    public double GetEmployeeMonthlySalary()
+    {
+        return (WorkedDays * (int)WorkHours * Salary) + (WorkedExtraHours * Salary * 1.5);
+    }
+
     // Call this after loading employees from JSON
     public static void SetCounterFromExisting(List<Employee> employees)
     {

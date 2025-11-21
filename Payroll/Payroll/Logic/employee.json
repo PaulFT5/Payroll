@@ -1,0 +1,30 @@
+[
+  {
+    "id": "EMP000001",
+    "salary": 5,
+    "workHours": "part4hrs",
+    "expectedSalary": 400,
+    "workedExtraHours": 0,
+    "workedExtraPay": 0,
+    "contractType": "external",
+    "missedDays": 0,
+    "workedDays": 0,
+    "salariesTotalBrut": 100,
+    "salariesTotalNet": 45,
+    "hiringDate": "2000-01-01T00:00:00",
+    "paid": [
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  }
+]

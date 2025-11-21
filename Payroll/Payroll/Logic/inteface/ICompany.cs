@@ -1,6 +1,7 @@
 ﻿namespace Payroll.Logic;
 
-public class ICompany
+public interface ICompany
 {
-    private double RecieveMoney;
+    public void RecieveMonthlyMoney();
+    public void Withdraw(int TotalSalaries);
 }
