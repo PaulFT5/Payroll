@@ -30,8 +30,7 @@ public class Employee
     public DateTime HiringDate { get; set; }
     public List<bool> Paid { get; set; } 
 
-    public Employee() { } // parameterless constructor for JSON
-
+    public Employee() { } 
     public Employee(int salary, workHoursEnum workHours, contractTypeEnum contractType)
     {
         Id = $"EMP{++_idCounter:D6}";//
@@ -65,6 +64,7 @@ public class Employee
     {
         return (WorkedDays * (int)WorkHours * Salary) + (WorkedExtraHours * Salary * 1.5);
     }
+    
 
     // Call this after loading employees from JSON
     public static void SetCounterFromExisting(List<Employee> employees)

@@ -1,6 +1,8 @@
 ﻿namespace Payroll.Logic.UI;
 
-public partial class AddEmployee : UserControl
+public partial class 
+    
+    AddEmployee : UserControl
 {
     public AddEmployee()
     {

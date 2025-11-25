@@ -64,13 +64,11 @@ namespace Payroll.Logic
 
                 Console.WriteLine($"[DEBUG] Total salaries this payday: {totalMoneyForEmployees}");
                 Console.WriteLine($"[DEBUG] Company money before withdrawal: {_company.MoneyInCompany}");
-
-                // 2) Company withdraws once
+                
                 _company.Withdraw((int)totalMoneyForEmployees);
 
                 Console.WriteLine($"[DEBUG] Company money after withdrawal: {_company.MoneyInCompany}");
-
-                // 3) Mark employees as paid + apply tax
+                
                 foreach (var e in employees)
                 {
                     if (!e.Paid[monthIndex])
@@ -79,8 +77,7 @@ namespace Payroll.Logic
                         e.Paid[monthIndex] = true;
                     }
                 }
-
-                // 4) Reset
+                
                 foreach (var e in employees)
                 {
                     if (e.Paid[monthIndex])
@@ -93,8 +90,7 @@ namespace Payroll.Logic
                 Console.WriteLine("========== END PAYDAY ==========\n");
             }
 
-
-            // ---- Reset missed days at start of new year ----
+            
             if (date.Day == 1 && date.Month == 1)
             {
                 foreach (var e in employees)
@@ -102,7 +98,6 @@ namespace Payroll.Logic
                     e.MissedDays = 0;
                 }
             }
-            // ---- Save employee state ----
             EmployeeManager.SaveEmployees();
         }
     }

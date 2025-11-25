@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll", "Payroll\Payroll.csproj", "{485A80F3-B91B-45C7-87E8-D0DCF6CF80F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll", "Payroll\Payroll.csproj", "{F84046DE-BE99-4F75-A426-458BCC3D433A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{485A80F3-B91B-45C7-87E8-D0DCF6CF80F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{485A80F3-B91B-45C7-87E8-D0DCF6CF80F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{485A80F3-B91B-45C7-87E8-D0DCF6CF80F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{485A80F3-B91B-45C7-87E8-D0DCF6CF80F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F84046DE-BE99-4F75-A426-458BCC3D433A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F84046DE-BE99-4F75-A426-458BCC3D433A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F84046DE-BE99-4F75-A426-458BCC3D433A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F84046DE-BE99-4F75-A426-458BCC3D433A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

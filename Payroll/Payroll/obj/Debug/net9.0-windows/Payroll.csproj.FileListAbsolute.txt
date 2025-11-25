@@ -12,3 +12,7 @@ S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\refint\Payroll.dll
 S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\Payroll.pdb
 S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\Payroll.genruntimeconfig.cache
 S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\ref\Payroll.dll
+S:\Cs\FCPLproj\Payroll\Payroll\bin\Debug\net9.0-windows\GrapeCity.DataVisualization.Chart.dll
+S:\Cs\FCPLproj\Payroll\Payroll\bin\Debug\net9.0-windows\zh\GrapeCity.DataVisualization.Chart.resources.dll
+S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\Payroll.csproj.AssemblyReference.cache
+S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\Payroll.csproj.Up2Date
