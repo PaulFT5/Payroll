@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Payroll.Logic
-{
+{ //
     public class Company : ICompany
     {
         private int _money;

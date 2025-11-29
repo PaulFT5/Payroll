@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "id": "EMP000002",
+    "salary": 6,
+    "workHours": "fulltime",
+    "expectedSalary": 960,
+    "workedExtraHours": 2,
+    "workedExtraPay": 18,
+    "contractType": "external",
+    "missedDays": 1,
+    "workedDays": 8,
+    "salariesTotalBrut": 258,
+    "salariesTotalNet": 116.10000000000001,
+    "hiringDate": "2000-01-01T00:00:00",
+    "paid": [
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  {
+    "id": "EMP000003",
+    "salary": 10,
+    "workHours": "part6hrs",
+    "expectedSalary": 1200,
+    "workedExtraHours": 11,
+    "workedExtraPay": 165,
+    "contractType": "external",
+    "missedDays": 0,
+    "workedDays": 8,
+    "salariesTotalBrut": 840,
+    "salariesTotalNet": 378,
+    "hiringDate": "2000-01-08T00:00:00",
+    "paid": [
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  }
+]
