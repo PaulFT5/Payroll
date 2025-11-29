@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net9.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Update="Logic\UI\AddEmployee.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
+      <Compile Update="Logic\UI\Form1.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Logic\UI\ManageEmployee.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="GrapeCity.DataVisualization.Chart" Version="0.4.136" />
+    </ItemGroup>
+
+</Project>

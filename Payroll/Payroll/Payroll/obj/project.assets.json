@@ -1,0 +1,153 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0-windows7.0": {
+      "GrapeCity.DataVisualization.Chart/0.4.136": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "5.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/GrapeCity.DataVisualization.Chart.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GrapeCity.DataVisualization.Chart.dll": {}
+        },
+        "resource": {
+          "lib/netstandard2.0/zh/GrapeCity.DataVisualization.Chart.resources.dll": {
+            "locale": "zh"
+          }
+        }
+      },
+      "System.Text.Json/5.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GrapeCity.DataVisualization.Chart/0.4.136": {
+      "sha512": "693Wc4POebJgrl2iXI23boAVpYH8VFecDuEzcelBGDF0e6HCMjIkVbDdysmLv8UygXVJHXqSpvhvcYYs7rhM8w==",
+      "type": "package",
+      "path": "grapecity.datavisualization.chart/0.4.136",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gclogo_nuget.png",
+        "grapecity.datavisualization.chart.0.4.136.nupkg.sha512",
+        "grapecity.datavisualization.chart.nuspec",
+        "lib/net461/GrapeCity.DataVisualization.Chart.dll",
+        "lib/net461/zh/GrapeCity.DataVisualization.Chart.resources.dll",
+        "lib/netstandard2.0/GrapeCity.DataVisualization.Chart.dll",
+        "lib/netstandard2.0/zh/GrapeCity.DataVisualization.Chart.resources.dll"
+      ]
+    },
+    "System.Text.Json/5.0.2": {
+      "sha512": "I47dVIGiV6SfAyppphxqupertT/5oZkYLDCX6vC3HpOI4ZLjyoKAreUoem2ie6G0RbRuFrlqz/PcTQjfb2DOfQ==",
+      "type": "package",
+      "path": "system.text.json/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Text.Json.dll",
+        "lib/net461/System.Text.Json.xml",
+        "lib/netcoreapp3.0/System.Text.Json.dll",
+        "lib/netcoreapp3.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.5.0.2.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0-windows7.0": [
+      "GrapeCity.DataVisualization.Chart >= 0.4.136"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\buciu\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "S:\\Cs\\FCPLproj\\Payroll\\Payroll\\Payroll.csproj",
+      "projectName": "Payroll",
+      "projectPath": "S:\\Cs\\FCPLproj\\Payroll\\Payroll\\Payroll.csproj",
+      "packagesPath": "C:\\Users\\buciu\\.nuget\\packages\\",
+      "outputPath": "S:\\Cs\\FCPLproj\\Payroll\\Payroll\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\buciu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0-windows"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0-windows7.0": {
+          "targetAlias": "net9.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "net9.0-windows7.0": {
+        "targetAlias": "net9.0-windows",
+        "dependencies": {
+          "GrapeCity.DataVisualization.Chart": {
+            "target": "Package",
+            "version": "[0.4.136, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Users\\buciu\\.dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

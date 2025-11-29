@@ -1,0 +1,57 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "Payroll/1.0.0": {
+        "dependencies": {
+          "GrapeCity.DataVisualization.Chart": "0.4.136"
+        },
+        "runtime": {
+          "Payroll.dll": {}
+        }
+      },
+      "GrapeCity.DataVisualization.Chart/0.4.136": {
+        "dependencies": {
+          "System.Text.Json": "5.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/GrapeCity.DataVisualization.Chart.dll": {
+            "assemblyVersion": "0.4.136.0",
+            "fileVersion": "0.4.136.0"
+          }
+        },
+        "resources": {
+          "lib/netstandard2.0/zh/GrapeCity.DataVisualization.Chart.resources.dll": {
+            "locale": "zh"
+          }
+        }
+      },
+      "System.Text.Json/5.0.2": {}
+    }
+  },
+  "libraries": {
+    "Payroll/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GrapeCity.DataVisualization.Chart/0.4.136": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-693Wc4POebJgrl2iXI23boAVpYH8VFecDuEzcelBGDF0e6HCMjIkVbDdysmLv8UygXVJHXqSpvhvcYYs7rhM8w==",
+      "path": "grapecity.datavisualization.chart/0.4.136",
+      "hashPath": "grapecity.datavisualization.chart.0.4.136.nupkg.sha512"
+    },
+    "System.Text.Json/5.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I47dVIGiV6SfAyppphxqupertT/5oZkYLDCX6vC3HpOI4ZLjyoKAreUoem2ie6G0RbRuFrlqz/PcTQjfb2DOfQ==",
+      "path": "system.text.json/5.0.2",
+      "hashPath": "system.text.json.5.0.2.nupkg.sha512"
+    }
+  }
+}

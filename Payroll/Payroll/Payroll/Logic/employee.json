@@ -1,0 +1,34 @@
+[
+  {
+    "id": "EMP000001",
+    "salary": 10,
+    "cas": 53.75,
+    "cass": 21.5,
+    "incomeTax": 21.5,
+    "specialTax": 0,
+    "workHours": "part4hrs",
+    "expectedSalary": 800,
+    "workedExtraHours": 0,
+    "workedExtraPay": 15,
+    "contractType": "external",
+    "missedDays": 0,
+    "workedDays": 0,
+    "salariesTotalBrut": 215,
+    "salariesTotalNet": 118.25,
+    "hiringDate": "2000-01-01T00:00:00",
+    "paid": {
+      "January": true,
+      "February": false,
+      "March": false,
+      "April": false,
+      "May": false,
+      "June": false,
+      "July": false,
+      "August": false,
+      "September": false,
+      "October": false,
+      "November": false,
+      "December": false
+    }
+  }
+]
