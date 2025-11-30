@@ -10,7 +10,7 @@ namespace Payroll.Logic;
 public static class EmployeeManager
 {
     public static List<Employee> Employees { get; set; } = new List<Employee>();
-    private static readonly string FilePath = Path.Combine("S:\\Cs\\FCPLproj\\Payroll\\Payroll\\Logic\\employee.json");
+    private static readonly string FilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "employee.json");
 
     public static void SaveEmployees()
     {

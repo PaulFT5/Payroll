@@ -2,5 +2,5 @@
 
 public interface ITaxPolicy
 {
-    double CalculateNet(double gross);
+    double CalculateNet(Employee employee, double gross);
 }

@@ -1,34 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq; 
 
 namespace Payroll.Logic
 {
     public class PayrollService
     {
+        private const int MaxMissedDays = 28;
+        private const int CompanyMoneyDay = 3;
+        private const double OvertimeMultiplier = 1.5;
+
         private readonly int _payday;
         private readonly ITaxPolicy _taxPolicy;
         private readonly Company _company;
-        private readonly int maxMissedDays;
-        private readonly int CompanyMoneyDay = 3;
+        
 
         public PayrollService(ITaxPolicy taxPolicy, Company company, int payday = 7)
         {
             _taxPolicy = taxPolicy;
             _company = company;
             _payday = payday;
-            maxMissedDays = 28;
 
             TimeManager.OnDateChanged += OnDateChange;
         }
 
         public void OnDateChange(DateTime date)
         {
-            var employees = EmployeeManager.Employees;
-
-            // ---- Daily work simulation ----
-            foreach (var e in employees)
+            SimulateDailyWork();
+            
+            if (date.Day == CompanyMoneyDay)
             {
-                if (EmployeeBehaviour.MissedADay() && e.MissedDays < maxMissedDays)
+                ProcessCompanyIncome();
+            }
+            
+            if (date.Day == _payday)
+            {
+                ProcessPayday(date);
+            }
+            
+            EmployeeManager.SaveEmployees();
+        }
+
+        private void SimulateDailyWork()
+        {
+            foreach (var e in EmployeeManager.Employees)
+            {
+                if (EmployeeBehaviour.MissedADay() && e.MissedDays < MaxMissedDays)
                 {
                     e.MissedDays++;
                 }
@@ -38,67 +56,60 @@ namespace Payroll.Logic
                     e.WorkedExtraHours += EmployeeBehaviour.WorkedExtraChance();
                 }
                 
-                e.WorkedExtraPay = e.WorkedExtraHours * e.Salary * 1.5;
+                e.WorkedExtraPay = e.WorkedExtraHours * e.Salary * OvertimeMultiplier;
+            }
+        }
+
+        private void ProcessCompanyIncome()
+        {
+            _company.RecieveMonthlyMoney();
+            Console.WriteLine($"[FINANCE] Company received income. Balance: {_company.MoneyInCompany}");
+        }
+
+        private void ProcessPayday(DateTime date)
+        {
+            Console.WriteLine("\n========== PAYDAY STARTED ==========");
+
+            var employees = EmployeeManager.Employees;
+            
+            string paymentKey = $"{date.ToString("MMMM", CultureInfo.InvariantCulture)}";
+            
+            var unpaidEmployees = employees
+                .Where(e => !e.Paid.GetValueOrDefault(paymentKey))
+                .ToList();
+
+            if (unpaidEmployees.Count == 0)
+            {
+                Console.WriteLine("[INFO] Everyone is already paid for this month.");
+                return;
             }
             
-            if (date.Day == CompanyMoneyDay)
+            double totalRequired = unpaidEmployees.Sum(e => e.GetEmployeeMonthlySalary());
+
+            Console.WriteLine($"[FINANCE] Total Salaries: {totalRequired} | Current Balance: {_company.MoneyInCompany}");
+            
+            try
             {
-                _company.RecieveMonthlyMoney();
-                Console.WriteLine($"[DEBUG] Company received monthly income. Balance: {_company.MoneyInCompany}");
+                _company.Withdraw((int)totalRequired);
+                Console.WriteLine($"[FINANCE] Withdrawal successful. New Balance: {_company.MoneyInCompany}");
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine($"[CRITICAL] BANKRUPTCY ALERT: {ex.Message}");
+                return; 
             }
             
-            if (date.Day == _payday)
+            foreach (var e in unpaidEmployees)
             {
-                Console.WriteLine("\n========== PAYDAY ==========");
-
-                int monthIndex = date.Month - 1;
-                double totalMoneyForEmployees = 0;
+                e.Pay(_taxPolicy);
                 
-                foreach (var e in employees)
-                {
-                    if (!e.Paid[monthIndex])
-                    {
-                        totalMoneyForEmployees += e.GetEmployeeMonthlySalary();
-                    }
-                }
-
-                Console.WriteLine($"[DEBUG] Total salaries this payday: {totalMoneyForEmployees}");
-                Console.WriteLine($"[DEBUG] Company money before withdrawal: {_company.MoneyInCompany}");
+                e.Paid[paymentKey] = true;
                 
-                _company.Withdraw((int)totalMoneyForEmployees);
-
-                Console.WriteLine($"[DEBUG] Company money after withdrawal: {_company.MoneyInCompany}");
-                
-                foreach (var e in employees)
-                {
-                    if (!e.Paid[monthIndex])
-                    {
-                        e.Pay(_taxPolicy);
-                        e.Paid[monthIndex] = true;
-                    }
-                }
-                
-                foreach (var e in employees)
-                {
-                    if (e.Paid[monthIndex])
-                    {
-                        e.WorkedDays = 0;
-                        e.WorkedExtraHours = 0;
-                    }
-                }
-
-                Console.WriteLine("========== END PAYDAY ==========\n");
+                e.WorkedDays = 0;
+                e.WorkedExtraHours = 0;
             }
 
-            
-            if (date.Day == 1 && date.Month == 1)
-            {
-                foreach (var e in employees)
-                {
-                    e.MissedDays = 0;
-                }
-            }
-            EmployeeManager.SaveEmployees();
+            Console.WriteLine("========== PAYDAY COMPLETE ==========\n");
         }
     }
 }

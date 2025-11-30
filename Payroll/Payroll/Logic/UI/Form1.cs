@@ -13,8 +13,9 @@ public partial class MainPage : Form
         InitializeComponent();
        
         labelMockDate.Text = $"Date: {TimeManager.MockDate:MMM dd, yyyy}";
-        // Subscribe to global date updates
+        
         TimeManager.OnDateChanged += UpdateDateLabel;
+        
         EmployeeManager.LoadEmployees(); // Load employees from JSON
         Employee.SetCounterFromExisting(EmployeeManager.Employees); // Sync ID counter
 
@@ -56,4 +57,6 @@ public partial class MainPage : Form
         page.Dock = DockStyle.Fill;
         AppPanel.Controls.Add(page);
     }
+
+
 }
