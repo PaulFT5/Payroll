@@ -12,7 +12,7 @@
       <Compile Update="Logic\UI\AddEmployee.cs">
         <SubType>UserControl</SubType>
       </Compile>
-      <Compile Update="Logic\UI\Form1.cs">
+      <Compile Update="Logic\UI\MainPage.cs">
         <SubType>Form</SubType>
       </Compile>
       <Compile Update="Logic\UI\ManageEmployee.cs">

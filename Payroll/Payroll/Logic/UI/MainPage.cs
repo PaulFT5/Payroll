@@ -1,4 +1,4 @@
-using Payroll.Logic;
+﻿using Payroll.Logic;
 using Payroll.Logic.UI;
 
 namespace Payroll.UI;
@@ -13,8 +13,9 @@ public partial class MainPage : Form
         InitializeComponent();
        
         labelMockDate.Text = $"Date: {TimeManager.MockDate:MMM dd, yyyy}";
-        // Subscribe to global date updates
+        
         TimeManager.OnDateChanged += UpdateDateLabel;
+        
         EmployeeManager.LoadEmployees(); // Load employees from JSON
         Employee.SetCounterFromExisting(EmployeeManager.Employees); // Sync ID counter
 
@@ -27,11 +28,6 @@ public partial class MainPage : Form
         labelMockDate.Text = $"Date: {newDate:MMM dd, yyyy}";
     }
 
-    private void button5_Click(object sender, EventArgs e)
-    {
-        throw new System.NotImplementedException();
-    }
-
     private void Add_Click(object sender, EventArgs e)
     {
         ShowPage(new AddEmployee());
@@ -39,20 +35,14 @@ public partial class MainPage : Form
 
     private void manage_Click(object sender, EventArgs e)
     {
-        //ShowPage(new ManageEmployee());
-        throw new  NotImplementedException();
+        
+        ShowPage(new ManageEmployee());
     }
 
     private void timer_Click(object sender, EventArgs e)
     {
         TimeManager.Toggle();
         timer.Text = TimeManager.IsRunning ? "Pause Timer" : "Start Timer";
-    }
-
-    private void stats_Click(object sender, EventArgs e)
-    {
-        //ShowPage(new Stats());
-        throw new NotImplementedException();
     }
 
     private void exit_Click(object sender, EventArgs e)
@@ -67,4 +57,6 @@ public partial class MainPage : Form
         page.Dock = DockStyle.Fill;
         AppPanel.Controls.Add(page);
     }
+
+
 }

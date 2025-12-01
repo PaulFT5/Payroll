@@ -14,7 +14,6 @@ namespace Payroll.UI
 
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Button manage;
-        private System.Windows.Forms.Button stats;
         private System.Windows.Forms.Button timer;
         private System.Windows.Forms.Button exit;
 
@@ -27,7 +26,6 @@ namespace Payroll.UI
             MenuPanel = new System.Windows.Forms.Panel();
             exit = new System.Windows.Forms.Button();
             timer = new System.Windows.Forms.Button();
-            stats = new System.Windows.Forms.Button();
             manage = new System.Windows.Forms.Button();
             Add = new System.Windows.Forms.Button();
             Title = new System.Windows.Forms.Label();
@@ -41,7 +39,6 @@ namespace Payroll.UI
             MenuPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             MenuPanel.Controls.Add(exit);
             MenuPanel.Controls.Add(timer);
-            MenuPanel.Controls.Add(stats);
             MenuPanel.Controls.Add(manage);
             MenuPanel.Controls.Add(Add);
             MenuPanel.Controls.Add(Title);
@@ -63,21 +60,12 @@ namespace Payroll.UI
             // 
             // timer
             // 
-            timer.Location = new System.Drawing.Point(0, 280);
+            timer.Location = new System.Drawing.Point(0, 233);
             timer.Name = "timer";
             timer.Size = new System.Drawing.Size(200, 41);
             timer.TabIndex = 1;
             timer.Text = "Timer";
             timer.Click += timer_Click;
-            // 
-            // stats
-            // 
-            stats.Location = new System.Drawing.Point(0, 233);
-            stats.Name = "stats";
-            stats.Size = new System.Drawing.Size(200, 41);
-            stats.TabIndex = 2;
-            stats.Text = "Stats";
-            stats.Click += stats_Click;
             // 
             // manage
             // 

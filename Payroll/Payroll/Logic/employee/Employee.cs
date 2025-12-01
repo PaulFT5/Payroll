@@ -29,7 +29,7 @@
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public contractTypeEnum ContractType { get; set; }
 
-        public static double gross { get; set; }
+        public double gross { get; set; }
 
         public int MissedDays { get; set; }
         public int WorkedDays { get; set; }
@@ -58,7 +58,6 @@
             CASS = 0;
             IncomeTax = 0;
             SpecialTax = 0;
-            
             Paid = new Dictionary<string, bool>
             {
                 ["January"] = false,
@@ -84,7 +83,7 @@
         public void Pay(ITaxPolicy taxPolicy)
         {
             double gross = (WorkedDays * (int)WorkHours * Salary) + (WorkedExtraHours * Salary * 1.5);
-            Employee.gross = gross;
+            this.gross = gross;
             SalariesTotalBrut += gross;
             double net = taxPolicy.CalculateNet(this, gross);
             SalariesTotalNet += net;
