@@ -36,6 +36,7 @@ namespace Payroll.UI
             // 
             // MenuPanel
             // 
+            MenuPanel.AutoSize = true;
             MenuPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             MenuPanel.Controls.Add(exit);
             MenuPanel.Controls.Add(timer);
@@ -46,7 +47,7 @@ namespace Payroll.UI
             MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             MenuPanel.Location = new System.Drawing.Point(0, 0);
             MenuPanel.Name = "MenuPanel";
-            MenuPanel.Size = new System.Drawing.Size(200, 450);
+            MenuPanel.Size = new System.Drawing.Size(203, 450);
             MenuPanel.TabIndex = 1;
             // 
             // exit
@@ -101,7 +102,7 @@ namespace Payroll.UI
             labelMockDate.Dock = System.Windows.Forms.DockStyle.Bottom;
             labelMockDate.Location = new System.Drawing.Point(0, 410);
             labelMockDate.Name = "labelMockDate";
-            labelMockDate.Size = new System.Drawing.Size(200, 40);
+            labelMockDate.Size = new System.Drawing.Size(203, 40);
             labelMockDate.TabIndex = 6;
             labelMockDate.Text = "Date: ---";
             labelMockDate.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -109,9 +110,9 @@ namespace Payroll.UI
             // AppPanel
             // 
             AppPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            AppPanel.Location = new System.Drawing.Point(200, 0);
+            AppPanel.Location = new System.Drawing.Point(203, 0);
             AppPanel.Name = "AppPanel";
-            AppPanel.Size = new System.Drawing.Size(600, 450);
+            AppPanel.Size = new System.Drawing.Size(597, 450);
             AppPanel.TabIndex = 0;
             // 
             // MainPage
@@ -124,6 +125,7 @@ namespace Payroll.UI
             Text = "MainPage";
             MenuPanel.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

@@ -44,7 +44,7 @@ partial class ManageEmployee
         listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { ID, Type, workHours, expectedSalary });
         listView1.Location = new System.Drawing.Point(0, 0);
         listView1.Name = "listView1";
-        listView1.Size = new System.Drawing.Size(600, 214);
+        listView1.Size = new System.Drawing.Size(600, 209);
         listView1.TabIndex = 0;
         listView1.UseCompatibleStateImageBehavior = false;
         listView1.View = System.Windows.Forms.View.Details;
@@ -90,7 +90,7 @@ partial class ManageEmployee
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         Controls.Add(remove);
         Controls.Add(listView1);
-        Size = new System.Drawing.Size(438, 300);
+        Size = new System.Drawing.Size(600, 450);
         ResumeLayout(false);
     }
 

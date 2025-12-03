@@ -6,11 +6,16 @@
 
     public class Employee
     {
+        
         private static int _idCounter = 0;
         
+        public string name { get; set; }
+        public string surname { get; set; }
         public string Id { get; set; }
         public int Salary { get; set; }
         
+        
+        //tax 
         public double CAS { get; set; }
         public double CASS { get; set; }
         public double IncomeTax { get; set; }
@@ -37,11 +42,16 @@
         public double SalariesTotalNet { get; set; }
         public DateTime HiringDate { get; set; }
         public Dictionary<string, bool> Paid { get; set; } 
+        
+        [JsonIgnore]
+        public Dictionary<string, PayHistory> PaymentHistory { get; set; }
 
         public Employee() { } 
-        public Employee(int salary, workHoursEnum workHours, contractTypeEnum contractType)
+        public Employee(string name, string surname, int salary, workHoursEnum workHours, contractTypeEnum contractType)
         {
             Id = $"EMP{++_idCounter:D6}";//
+            this.name = name;
+            this.surname = surname;
             ContractType = contractType;// extern/intern
             Salary = salary;// per hour
             WorkHours = workHours;//4hr/6hr/fulltime
@@ -73,6 +83,8 @@
                 ["November"] = false,
                 ["December"] = false
             };
+            
+            PaymentHistory = new Dictionary<string, PayHistory>();
         }
 
         public void WorkedOneDay()
@@ -80,13 +92,14 @@
             if(!TimeManager.IsWeekend()) WorkedDays++;
         }
 
-        public void Pay(ITaxPolicy taxPolicy)
+        public double Pay(ITaxPolicy taxPolicy)
         {
             double gross = (WorkedDays * (int)WorkHours * Salary) + (WorkedExtraHours * Salary * 1.5);
             this.gross = gross;
             SalariesTotalBrut += gross;
             double net = taxPolicy.CalculateNet(this, gross);
             SalariesTotalNet += net;
+            return net;
         }
 
         public double GetEmployeeMonthlySalary()

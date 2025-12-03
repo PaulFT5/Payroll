@@ -72,7 +72,7 @@ namespace Payroll.Logic
 
             var employees = EmployeeManager.Employees;
             
-            string paymentKey = $"{date.ToString("MMMM", CultureInfo.InvariantCulture)}";
+            string paymentKey = $"{date.ToString("MMMM-yyyy", CultureInfo.InvariantCulture)}";
             
             var unpaidEmployees = employees
                 .Where(e => !e.Paid.GetValueOrDefault(paymentKey))
@@ -101,7 +101,19 @@ namespace Payroll.Logic
             
             foreach (var e in unpaidEmployees)
             {
-                e.Pay(_taxPolicy);
+                double monthlyNet = e.Pay(_taxPolicy);
+                var history = new PayHistory( 
+                    (decimal)e.gross, 
+                    (decimal)monthlyNet, 
+                    (decimal)e.CAS, 
+                    (decimal)e.CASS, 
+                    (decimal)e.IncomeTax, 
+                    (decimal)e.SpecialTax, 
+                    e.WorkedDays, 
+                    e.WorkedExtraHours
+                    );
+                
+                e.PaymentHistory.Add(paymentKey, history);
                 
                 e.Paid[paymentKey] = true;
                 

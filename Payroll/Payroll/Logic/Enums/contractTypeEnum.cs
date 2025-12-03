@@ -2,6 +2,7 @@
 
 public enum contractTypeEnum
 {
+    select,
     external,
     intern,
 }

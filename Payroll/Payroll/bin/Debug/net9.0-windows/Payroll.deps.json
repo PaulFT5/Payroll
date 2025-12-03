@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v9.0": {
       "Payroll/1.0.0": {
         "dependencies": {
-          "GrapeCity.DataVisualization.Chart": "0.4.136"
+          "GrapeCity.DataVisualization.Chart": "0.4.136",
+          "WinForms.DataVisualization": "1.10.0"
         },
         "runtime": {
           "Payroll.dll": {}
@@ -30,7 +31,19 @@
           }
         }
       },
-      "System.Text.Json/5.0.2": {}
+      "System.Text.Json/5.0.2": {},
+      "WinForms.DataVisualization/1.10.0": {
+        "runtime": {
+          "lib/net9.0-windows7.0/WinForms.DataVisualization.Utilities.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.10.0.0"
+          },
+          "lib/net9.0-windows7.0/WinForms.DataVisualization.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.10.0.0"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -52,6 +65,13 @@
       "sha512": "sha512-I47dVIGiV6SfAyppphxqupertT/5oZkYLDCX6vC3HpOI4ZLjyoKAreUoem2ie6G0RbRuFrlqz/PcTQjfb2DOfQ==",
       "path": "system.text.json/5.0.2",
       "hashPath": "system.text.json.5.0.2.nupkg.sha512"
+    },
+    "WinForms.DataVisualization/1.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QKFQUf6xnsseiRsWfIeKvbWRJWvOKOvkoec/pWxEjwYrr4Vix4xmAWmvTpJGxoeWRXOzV7Pprm5SCFqzXzBA4g==",
+      "path": "winforms.datavisualization/1.10.0",
+      "hashPath": "winforms.datavisualization.1.10.0.nupkg.sha512"
     }
   }
 }

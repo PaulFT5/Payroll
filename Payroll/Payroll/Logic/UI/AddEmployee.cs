@@ -12,7 +12,9 @@ public partial class
         workHoursComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
         ContractTypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
     }
-
+    
+    
+    private string name = string.Empty, surname = string.Empty;
     private int money;
     private workHoursEnum workHours;
     private contractTypeEnum contractType;
@@ -31,13 +33,45 @@ public partial class
     {
         contractType = (contractTypeEnum)(ContractTypeComboBox.SelectedItem ?? throw new InvalidOperationException());
     }
+    private void textBox1_TextChanged(object sender, EventArgs e)
+    {
+        string[] fullName = textBox1.Text.Split(' ');
+        if (fullName.Length > 0)
+            name = fullName[0];
+
+        if (fullName.Length > 1)
+            surname = fullName[1];
+
+    }
 
     private void AddEmployeeButton_Click(object sender, EventArgs e)
     {
-        var emp = new Employee(money, workHours, contractType);
+        if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(surname))
+        {
+            MessageBox.Show("Please enter a name and/or surname", "Failed operation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+        if (money <= 0)
+        {
+            MessageBox.Show("Please enter a valid money", "Failed operation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+        if (workHours == workHoursEnum.select || contractType == contractTypeEnum.select)
+        {
+            MessageBox.Show("Please enter a valid operation", "Failed operation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+
+        var emp = new Employee(name, surname, money, workHours, contractType);
         EmployeeManager.Employees.Add(emp);
         EmployeeManager.SaveEmployees();
 
         MessageBox.Show("Employee added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
+    
+
+
 }
