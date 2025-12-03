@@ -9,13 +9,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Update="Logic\UI\AddEmployee.cs">
-        <SubType>UserControl</SubType>
-      </Compile>
       <Compile Update="Logic\UI\MainPage.cs">
         <SubType>Form</SubType>
       </Compile>
-      <Compile Update="Logic\UI\ManageEmployee.cs">
+      <Compile Update="Logic\UI\AddEmployee\AddEmployee.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
+      <Compile Update="Logic\UI\Manage\ManageEmployee.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
+      <Compile Update="Logic\UI\Details\EmployeeDetails.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Logic\UI\Details\MonthlyStats.cs">
         <SubType>UserControl</SubType>
       </Compile>
     </ItemGroup>
