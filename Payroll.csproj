@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net9.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Update="UI\MainPage.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="UI\ManageEmployee.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
+      <Compile Update="UI\AddEmployee.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
+      <Compile Update="UI\Details\EmployeeDetails.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="UI\Details\MonthlyStats.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
+      <Compile Update="UI\Details\PaymentHistory.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
+    </ItemGroup>
+
+</Project>

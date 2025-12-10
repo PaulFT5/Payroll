@@ -1,0 +1,14 @@
+S:\Cs\FCPLproj\Payroll\Payroll\bin\Debug\net9.0-windows\Payroll.exe
+S:\Cs\FCPLproj\Payroll\Payroll\bin\Debug\net9.0-windows\Payroll.deps.json
+S:\Cs\FCPLproj\Payroll\Payroll\bin\Debug\net9.0-windows\Payroll.runtimeconfig.json
+S:\Cs\FCPLproj\Payroll\Payroll\bin\Debug\net9.0-windows\Payroll.dll
+S:\Cs\FCPLproj\Payroll\Payroll\bin\Debug\net9.0-windows\Payroll.pdb
+S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\Payroll.GeneratedMSBuildEditorConfig.editorconfig
+S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\Payroll.AssemblyInfoInputs.cache
+S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\Payroll.AssemblyInfo.cs
+S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\Payroll.csproj.CoreCompileInputs.cache
+S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\Payroll.dll
+S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\refint\Payroll.dll
+S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\Payroll.pdb
+S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\Payroll.genruntimeconfig.cache
+S:\Cs\FCPLproj\Payroll\Payroll\obj\Debug\net9.0-windows\ref\Payroll.dll

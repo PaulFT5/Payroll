@@ -1,0 +1,37 @@
+[
+  {
+    "name": "tst",
+    "surname": "test",
+    "id": "EMP000001",
+    "salary": 30,
+    "cas": 112.5,
+    "cass": 45,
+    "incomeTax": 45,
+    "specialTax": 22.5,
+    "workHours": "part4hrs",
+    "expectedSalary": 2400,
+    "workedExtraHours": 2,
+    "workedExtraPay": 90,
+    "contractType": "external",
+    "gross": 0,
+    "missedDays": 0,
+    "workedDays": 6,
+    "salariesTotalBrut": 0,
+    "salariesTotalNet": 0,
+    "hiringDate": "2000-01-01T00:00:00",
+    "paid": {
+      "January": false,
+      "February": false,
+      "March": false,
+      "April": false,
+      "May": false,
+      "June": false,
+      "July": false,
+      "August": false,
+      "September": false,
+      "October": false,
+      "November": false,
+      "December": false
+    }
+  }
+]
