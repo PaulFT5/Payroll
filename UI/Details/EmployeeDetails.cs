@@ -42,6 +42,6 @@ public partial class EmployeeDetails : Form
 
     private void button_Click(object sender, EventArgs e)
     {
-        ShowPage(new PaymentHistory());
+        ShowPage(new PaymentHistory(emp));
     }
 }

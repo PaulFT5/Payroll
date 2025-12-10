@@ -4,20 +4,20 @@
     "surname": "test",
     "id": "EMP000001",
     "salary": 30,
-    "cas": 112.5,
-    "cass": 45,
-    "incomeTax": 45,
-    "specialTax": 22.5,
+    "cas": 630,
+    "cass": 252,
+    "incomeTax": 252,
+    "specialTax": 126,
     "workHours": "part4hrs",
     "expectedSalary": 2400,
-    "workedExtraHours": 2,
-    "workedExtraPay": 90,
+    "workedExtraHours": 0,
+    "workedExtraPay": 0,
     "contractType": "external",
-    "gross": 0,
-    "missedDays": 0,
-    "workedDays": 6,
-    "salariesTotalBrut": 0,
-    "salariesTotalNet": 0,
+    "gross": 2520,
+    "missedDays": 1,
+    "workedDays": 0,
+    "salariesTotalBrut": 3855,
+    "salariesTotalNet": 1927.5,
     "hiringDate": "2000-01-01T00:00:00",
     "paid": {
       "January": false,
@@ -31,7 +31,20 @@
       "September": false,
       "October": false,
       "November": false,
-      "December": false
+      "December": false,
+      "January-2000": true
+    },
+    "paymentHistory": {
+      "January-2000": {
+        "grossPay": 2520,
+        "netPay": 1260,
+        "cas": 630,
+        "cass": 252,
+        "incomeTax": 252,
+        "specialTax": 126,
+        "workedDays": 18,
+        "overtimeHours": 8
+      }
     }
   }
 ]
